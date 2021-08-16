@@ -25,10 +25,6 @@ const ProductList = () => {
         productTitle: "fdjfsd", productDescription:"fnjsfbsd"
     },{
         productTitle: "fdjfsd", productDescription:"fnjsfbsd"
-    },{
-        productTitle: "fdjfsd", productDescription:"fnjsfbsd"
-    },{
-        productTitle: "fdjfsd", productDescription:"fnjsfbsd"
     }]
     return (
         <div className="product-container">
