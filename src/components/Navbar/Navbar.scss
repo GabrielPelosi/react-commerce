@@ -1,4 +1,7 @@
 .navbar{
+    position: fixed;
+    width: 100%;
+    top: 0;
     height: 80px;
     background: #575b8b;
     display:flex;
@@ -28,6 +31,9 @@
         display:flex;
         list-style: none;
         margin-left: 35px ;
+        @media screen and (max-width: 500px){
+            display: none;
+        }
     }
 
     .nav-items ul li{

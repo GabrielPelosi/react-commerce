@@ -16,7 +16,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="cart-container">
-                    <img src="https://image.flaticon.com/icons/png/512/263/263142.png" className="cart-btn" />
+                    <img src="https://image.flaticon.com/icons/png/512/263/263142.png" className="cart-btn" alt=""/>
                 </div>
             </nav>
         </>
