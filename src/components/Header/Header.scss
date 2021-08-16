@@ -1,18 +1,24 @@
+
+
 .header-tutorial{
     background: rgba(235, 233, 233, 0.603);
-    height: 280px;
+    height: 30%;
     padding: 35px;
+    margin-top: 50px ;
 
     .title{
         display: flex;
         justify-content: center;
         margin-bottom: 15px;
+        font-family: 'Source Sans Pro', sans-serif;
         font-size: 1.2em;
     }
 
     .tutorial-container{
         display: flex;
         justify-content: space-evenly;
+        flex-wrap:  wrap;
+        flex: 1;
         
         .card-tutorial{
             height: 170px;
