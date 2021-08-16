@@ -1,0 +1,38 @@
+.header-tutorial{
+    background: rgba(235, 233, 233, 0.603);
+    height: 280px;
+    padding: 35px;
+
+    .title{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+        font-size: 1.2em;
+    }
+
+    .tutorial-container{
+        display: flex;
+        justify-content: space-evenly;
+        
+        .card-tutorial{
+            height: 170px;
+            width: 150px;
+            background-color: lightgray;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 10px;
+            border-radius: 15px;
+        }
+
+        .card-tutorial p{
+            font-size: 1.1em;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+    }
+  
+}
