@@ -1,5 +1,8 @@
 import React from 'react'
 import './Product.scss';
+import {FavoriteBorder} from '@material-ui/icons';
+
+
 type Prod = {
     productTitle: string,
     productDescription: string,
@@ -24,7 +27,7 @@ const Product = ({productTitle, productDescription}: Prod) => {
                 <div className="buttons">
                     <span className="price"> $ 50</span>
                     <button className="btn cart">Add to cart</button>
-                    <button className="btn bookmark"><i></i></button>
+                    <button className="btn bookmark"><FavoriteBorder style={{fontSize: 20}}/></button>
                 </div>
             </div>
         </div>
