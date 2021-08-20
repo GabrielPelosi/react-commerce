@@ -33,12 +33,13 @@ const Product = ({ productObj, cartItems, setCartItems, setCartMenuState, setPop
                 var cartItemQuantity = cartItems[index].quantity
                 if (cartItemQuantity + productQuantity <= 10) {
                     cartItems[index].quantity = productQuantity + cartItemQuantity
+                    setProductItemCount(productItemCount + productQuantity)
                     setCartItems(cartItems)
                 }else{
                     setPopuponError(true)
                 }
             } else {
-                setProductItemCount(productItemCount + 1)
+                setProductItemCount(productItemCount + productQuantity)
                 cartItems.push(cartItem)
                 setCartItems(cartItems)
             }
