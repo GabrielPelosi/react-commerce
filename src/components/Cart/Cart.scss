@@ -1,17 +1,62 @@
 .user-cart-dropmenu{
     position: fixed;
     z-index: 2;
-    right: -500px;
-    height: 100vh;
+    right: -800px;
+    height: 89vh;
     width: 25%;
     margin-top:30px;
-    background: rgb(73, 73, 128);
+    background: #494980;
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
     transition: .9s;
+    overflow-y:auto;
+    @media screen and (max-width: 760px) {
+        width: 100%;
+    }
+
+    .cart-buttons{
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        button{
+            margin-top: 5px;
+            padding: 9px;
+            border: unset;
+            outline: none;
+            border: unset;
+            font-size: 17px;
+            border-radius:15px;
+            cursor: pointer;
+            background: #9595c0;
+            background-size: 200%;
+            transition: .5s;
+        }
+        button:hover {
+            background: #ffff;
+            
+        }
+    }
+    .added-cart-items-title{
+        margin-top: 10px;
+
+        @media screen and (max-width: 793px) {
+            text-align: center;
+        }
+    }
     &.active{
         
         right:0;
+    }
+
+    .added-cart-items-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width:100%;
     }
 }

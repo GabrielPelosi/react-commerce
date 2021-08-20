@@ -6,7 +6,7 @@
     background: #f0f0f0;
     margin: 15px;
     .product-img {
-        width:300px;
+        width: 300px;
         height: 230px;
     }
 
@@ -19,27 +19,55 @@
         font-family: "Poppins", sans-serif;
         color: #fff;
 
+        .price {
+            display: block;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
         p {
             font-size: 0.8rem;
             color: #5f5f6b;
         }
     }
-
-    .rating {
-        font-size: 0.7rem;
-        color: #fdcc0d;
-    }
-
     .buttons {
-        height: 65px;
+        height: 55px;
         display: flex;
         align-items: center;
         justify-content: center;
 
-        .price {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin: 5px;
+        .qnt-input-container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 1.2em;
+            .qnt-title {
+                margin-right: 10px;
+            }
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                /* display: none; <- Crashes Chrome on hover */
+                -webkit-appearance: none;
+                margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+            }
+
+            input[type="number"] {
+                -webkit-appearance: none;
+                margin: 0;
+                -moz-appearance: textfield; /* Firefox */
+                width: 30px;
+                
+                border: unset;
+                outline: none;
+                background-color: #21222d;
+                color: #fff;
+                font-size: 1.1em;
+                margin-left: 15px;
+            }
+
+            input[type="number"]:out-of-range{
+                border: solid 1px red;
+            }
         }
 
         .btn {

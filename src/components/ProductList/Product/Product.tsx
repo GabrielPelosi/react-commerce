@@ -1,33 +1,81 @@
+import {useState} from 'react'
 import React from 'react'
 import './Product.scss';
-import {FavoriteBorder} from '@material-ui/icons';
+import { FavoriteBorder, ControlPoint,Remove,RemoveCircleOutline } from '@material-ui/icons';
+import {CartProduct} from './../../../types/CartProduct'
+import {ProductType} from './../../../types/Product'
+ 
 
-
-type Prod = {
-    productTitle: string,
-    productDescription: string,
+type ProdParam = {
+    productObj: ProductType,
+    cartItems: CartProduct[],
+     setCartItems: Function,
+     setCartMenuState: Function,
 }
 
-const Product = ({productTitle, productDescription}: Prod) => {
+const Product = ({ productObj, cartItems, setCartItems, setCartMenuState }: ProdParam) => {
+
+    const [productQuantity, setProductQuantity] = useState<number>(0);
+
+    const addProdToCartMemoty = () => {
+        setCartMenuState(false)
+        if(productQuantity > 0){
+            const cartItem: CartProduct = {
+                product: productObj,
+                quantity: productQuantity,
+            }
+            if(cartItems.some(item => item.product.id === productObj.id)){
+                var index = cartItems.findIndex(item => item.product.id === productObj.id)
+                var flag = cartItems[index].quantity
+                if(flag + productQuantity <= 10){
+                    cartItems[index].quantity = productQuantity + cartItems[index].quantity
+                    setCartItems(cartItems)
+                }
+            }else  {
+                cartItems.push(cartItem)
+                setCartItems(cartItems)
+                console.log(cartItems)
+            }
+            
+        }
+       
+    }
+    
+
     return (
         <div className="product-card">
             <div className="product-img">
 
             </div>
             <div className="product-detail">
-                <span>{productTitle}t</span>
-                <div className="rating">
-                    <i>a</i>
-                    <i>a</i>
-                    <i>a</i>
-                    <i>a</i>
-                    <i>a</i>
-                </div>
-                <p>{productDescription}</p>
+                <span className="price" > R$ {productObj.price}</span>
+                <span>{productObj.name}t</span>
+                <p>{productObj.description}</p>
+
                 <div className="buttons">
-                    <span className="price"> $ 50</span>
-                    <button className="btn cart">Add to cart</button>
-                    <button className="btn bookmark"><FavoriteBorder style={{fontSize: 20}}/></button>
+
+                    <div className="qnt-input-container">
+                        <span className="qnt-title">Quantidade</span> 
+                        <ControlPoint onClick={()=> productQuantity >=10 ? setProductQuantity(10) :  setProductQuantity((productQuantity + 1))} style={{ fontSize: 20, color: "#fff", margin: "5px", cursor: "pointer" }}/>
+                        <input type="number" value={productQuantity} min="0" max="10"
+                        onChange={(event: any) => {
+                            if(event.target.value.lenght > 1){
+                                alert('eero')
+                            }else{
+                                setProductQuantity(event.target.value);
+                            }
+                            
+                          }}
+                          /> 
+                        <RemoveCircleOutline onClick={()=> productQuantity <=0 ? setProductQuantity(0) : setProductQuantity((productQuantity - 1))} style={{ fontSize: 20, color: "#fff", margin: "5px", marginTop: "5px", cursor: "pointer" }}/>
+                        
+                    </div>
+
+                </div>
+                <div className="buttons">
+                    <button onClick={() => addProdToCartMemoty()} className="btn cart">Add to cart</button>
+                    <button onClick={() => alert('added to fav')} className="btn bookmark"><FavoriteBorder style={{ fontSize: 20 }} /></button>
+
                 </div>
             </div>
         </div>
