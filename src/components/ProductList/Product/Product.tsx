@@ -13,9 +13,11 @@ type ProdParam = {
     setCartItems: Function,
     setCartMenuState: Function,
     setPopuponError: Function,
+    setProductItemCount: Function,
+    productItemCount: number,
 }
 
-const Product = ({ productObj, cartItems, setCartItems, setCartMenuState, setPopuponError }: ProdParam) => {
+const Product = ({ productObj, cartItems, setCartItems, setCartMenuState, setPopuponError,setProductItemCount,productItemCount }: ProdParam) => {
 
     const [productQuantity, setProductQuantity] = useState<number>(0);
 
@@ -36,6 +38,7 @@ const Product = ({ productObj, cartItems, setCartItems, setCartMenuState, setPop
                     setPopuponError(true)
                 }
             } else {
+                setProductItemCount(productItemCount + 1)
                 cartItems.push(cartItem)
                 setCartItems(cartItems)
             }

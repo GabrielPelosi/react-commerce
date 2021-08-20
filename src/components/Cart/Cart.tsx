@@ -7,13 +7,18 @@ import CartItem from './CartItem/CartItem'
 type CartParams = {
     cartMenuState: Boolean
     cartItems: CartProduct[],
-    setCartItems: Function
+    setCartItems: Function,
+    setProductItemCount: Function,
 }
 
 
 
-const Cart = ({ cartMenuState, cartItems, setCartItems }: CartParams) => {
+const Cart = ({ cartMenuState, cartItems, setCartItems,setProductItemCount }: CartParams) => {
 
+    const clearCart = () =>{
+        setCartItems([])
+        setProductItemCount(0)
+    }
     return (
         <>
             <div className={"user-cart-dropmenu " + (cartMenuState && "active")}>
@@ -22,7 +27,7 @@ const Cart = ({ cartMenuState, cartItems, setCartItems }: CartParams) => {
                 </div>
                 <div className="cart-buttons">
                     <button>Finalizar compra</button>
-                    <button onClick={() => setCartItems([])}>Limpar carrinho</button>
+                    <button onClick={() => clearCart()}>Limpar carrinho</button>
                 </div>
 
                 <div className="added-cart-items-container">

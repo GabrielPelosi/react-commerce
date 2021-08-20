@@ -3,11 +3,12 @@ import './Navbar.scss'
 
 type NavParam = {
     cartMenuState: Boolean,
-    setCartMenuState: Function
+    setCartMenuState: Function,
+    productItemCount: number,
 }
 
 
-const Navbar = ({cartMenuState, setCartMenuState}: NavParam) => {
+const Navbar = ({cartMenuState, setCartMenuState,productItemCount}: NavParam) => {
     return (
         <>
             <nav className="navbar">
@@ -23,6 +24,7 @@ const Navbar = ({cartMenuState, setCartMenuState}: NavParam) => {
                 </div>
                 <div className="cart-container">
                     <img onClick={() => setCartMenuState(!cartMenuState)} src="https://image.flaticon.com/icons/png/512/263/263142.png" className="cart-btn" alt=""/>
+                    <span className="cart-container-counter">{productItemCount}</span>
                 </div>
             </nav>
         </>

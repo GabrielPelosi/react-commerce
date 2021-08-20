@@ -9,11 +9,13 @@ type ProductParam = {
     cartItems: CartProduct[],
     setCartItems: Function,
     setCartMenuState: Function,
+    setProductItemCount: Function,
+    productItemCount: number,
 }
 
-const ProductList = ({ cartItems, setCartItems, setCartMenuState }: ProductParam) => {
+const ProductList = ({ cartItems, setCartItems, setCartMenuState,setProductItemCount,productItemCount }: ProductParam) => {
 
-    const [alertValue, setAlertValue] = useState<boolean>(true)
+    const [alertValue, setAlertValue] = useState<boolean>(false)
 
     const products: ProductType[] = [{
         id: 1, name: "fdjfsd", description: "fnjsfbsd", price: 15.99
@@ -30,7 +32,9 @@ const ProductList = ({ cartItems, setCartItems, setCartMenuState }: ProductParam
                         <Product productObj={productObj}
                             cartItems={cartItems} setCartItems={setCartItems}
                             setCartMenuState={setCartMenuState}
-                            setPopuponError={setAlertValue} />
+                            setPopuponError={setAlertValue}
+                            setProductItemCount={setProductItemCount}
+                            productItemCount={productItemCount} />
                     ))
                 }
 

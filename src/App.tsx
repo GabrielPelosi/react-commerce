@@ -11,16 +11,21 @@ function App() {
 
   const [cartMenuState, setCartMenuState] = useState<Boolean>(false)
   const [cartItems, setCartItems] = useState<CartProduct[]>([])
+  const [productItemCount, setProductItemCount] = useState<number>(0)
 
   return (
     <>
 
-      <Navbar cartMenuState={cartMenuState} setCartMenuState={setCartMenuState} />
-      <Cart cartMenuState={cartMenuState} cartItems={cartItems} setCartItems={setCartItems} />
+      <Navbar cartMenuState={cartMenuState} setCartMenuState={setCartMenuState} productItemCount={productItemCount}/>
+      <Cart setProductItemCount={setProductItemCount}
+      cartMenuState={cartMenuState} cartItems={cartItems} 
+      setCartItems={setCartItems} />
       <Header />
       <ProductList 
       cartItems={cartItems} setCartItems={setCartItems} 
       setCartMenuState={setCartMenuState}
+      setProductItemCount={setProductItemCount}
+      productItemCount={productItemCount}
       />
       <Footer />
     </>
