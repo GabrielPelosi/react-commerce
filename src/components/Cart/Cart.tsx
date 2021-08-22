@@ -3,6 +3,7 @@ import './Cart.scss'
 import { ProductType } from '../../types/Product'
 import { CartProduct } from '../../types/CartProduct'
 import CartItem from './CartItem/CartItem'
+import { Link } from 'react-router-dom'
 
 type CartParams = {
     cartMenuState: Boolean
@@ -13,9 +14,9 @@ type CartParams = {
 
 
 
-const Cart = ({ cartMenuState, cartItems, setCartItems,setProductItemCount }: CartParams) => {
+const Cart = ({ cartMenuState, cartItems, setCartItems, setProductItemCount }: CartParams) => {
 
-    const clearCart = () =>{
+    const clearCart = () => {
         setCartItems([])
         setProductItemCount(0)
     }
@@ -26,7 +27,14 @@ const Cart = ({ cartMenuState, cartItems, setCartItems,setProductItemCount }: Ca
                     <h3>Produtos do carrinho!</h3>
                 </div>
                 <div className="cart-buttons">
-                    <button>Finalizar compra</button>
+                    <Link to={{
+                        pathname: "/order",
+                        state: {
+                            cartItems
+                        }
+                    }} style={{ textDecoration: 'none', color: 'black' }}>
+                        <button>Finalizar compra </button>
+                    </Link>
                     <button onClick={() => clearCart()}>Limpar carrinho</button>
                 </div>
 
