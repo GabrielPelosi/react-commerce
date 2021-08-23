@@ -23,6 +23,12 @@ const ProductList = ({ cartItems, setCartItems, setCartMenuState,setProductItemC
         id: 2, name: "54648", description: "fnjsfbsd", price: 12.50
     }, {
         id: 3, name: "uiopymopi", description: "fnjsfbsd", price: 10
+    },{
+        id: 4, name: "3n5m74m7", description: "756756", price: 12
+    },{
+        id: 5, name: "m567m567", description: "yryrtyn", price: 13
+    },{
+        id: 6, name: "74nyr467n", description: "yryrynrynrnyrny", price: 11
     },]
     return (
         <>
