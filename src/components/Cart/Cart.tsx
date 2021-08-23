@@ -18,7 +18,9 @@ const Cart = ({ cartMenuState, cartItems, setCartItems, setProductItemCount }: C
 
     const clearCart = () => {
         setCartItems([])
+        localStorage.removeItem('cart-items-lenght')
         setProductItemCount(0)
+        localStorage.removeItem('cart-items')
     }
     return (
         <>

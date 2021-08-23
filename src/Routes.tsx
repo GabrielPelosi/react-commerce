@@ -3,7 +3,9 @@ import Home from './components/Home/Home'
 
 import React from 'react'
 import Order from "./components/Order/Order";
-import { CartProduct } from "./types/CartProduct";
+import Favorites from "./components/Favorites/Favorites";
+import Historic from "./components/Historic/Historic";
+
 
 const Routes = () => {
     return (
@@ -11,19 +13,27 @@ const Routes = () => {
             <BrowserRouter>
                 <Switch>
                     <Route path="/" exact>
-                        <Home/>
+                        <Home />
                     </Route>
 
-                    <Route path="/order" render={({location}) => {
-                        const {state}:any = location
-                        return <Order cartItems={state.cartItems}/>}}
-                        />
+                    <Route path="/order" render={({ location }) => {
+                        const { state }: any = location
+                        return <Order cartItems={state.cartItems} />
+                    }}
+                    />
 
+                    <Route path="/favoritos">
+                        <Favorites/>
+                    </Route>
+
+                    <Route path="/historico">
+                        <Historic/>
+                    </Route>
 
 
                 </Switch>
-            
-            
+
+
             </BrowserRouter>
         </div>
     )

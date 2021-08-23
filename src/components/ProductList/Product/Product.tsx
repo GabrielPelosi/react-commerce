@@ -34,14 +34,18 @@ const Product = ({ productObj, cartItems, setCartItems, setCartMenuState, setPop
                 if (cartItemQuantity + productQuantity <= 10) {
                     cartItems[index].quantity = productQuantity + cartItemQuantity
                     setProductItemCount(productItemCount + productQuantity)
+                    localStorage.setItem('cart-items-lenght', JSON.stringify(productItemCount + productQuantity))
                     setCartItems(cartItems)
+                    localStorage.setItem('cart-items', JSON.stringify(cartItems))
                 }else{
                     setPopuponError(true)
                 }
             } else {
                 setProductItemCount(productItemCount + productQuantity)
+                localStorage.setItem('cart-items-lenght', JSON.stringify(productItemCount + productQuantity))
                 cartItems.push(cartItem)
                 setCartItems(cartItems)
+                localStorage.setItem('cart-items', JSON.stringify(cartItems))
             }
         }else{
             setPopuponError(true)

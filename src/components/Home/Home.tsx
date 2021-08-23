@@ -8,9 +8,14 @@ import Cart from '../Cart/Cart';
 import { CartProduct } from '../../types/CartProduct'
 
 const Home = () => {
+
     const [cartMenuState, setCartMenuState] = useState<Boolean>(false)
-    const [cartItems, setCartItems] = useState<CartProduct[]>([])
-    const [productItemCount, setProductItemCount] = useState<number>(0)
+    const [cartItems, setCartItems] = useState<CartProduct[]>(
+      JSON.parse(localStorage.getItem('cart-items') || "[]")
+    )
+    const [productItemCount, setProductItemCount] = useState<number>(
+      JSON.parse(localStorage.getItem('cart-items-lenght') || "0")
+    )
   
     return (
       <>
