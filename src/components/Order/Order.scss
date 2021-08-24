@@ -1,4 +1,20 @@
-.form-container {
+.form-cart-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+   align-items: center;
+    background: linear-gradient(125deg, #777dbe, #5660d4);
+
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        height: 100%;
+    }
+    .form-container{
+       display: flex;
+       align-items: center;
+       flex-direction: column;
+        width: 100%;
+    }
     .order-title {
         margin-bottom: 15px;
         font-family: sans-serif;
@@ -13,13 +29,7 @@
         height: 90px;
         margin-bottom: 15px;
     }
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(125deg, #777dbe, #5660d4);
+
     fieldset {
         border: 0;
         margin-top: 15px;
@@ -123,17 +133,19 @@
         border-radius:15px;
         margin-bottom: 15px;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        text-align: center;
-        max-width: 45%;
+        align-items: center;
+        flex-direction: column;
+        width: 55%;
         margin-top: 15px;
+        overflow-y:auto;
+        height: 100%;
         .cart-items-order {
-            margin: 15px;
+            margin-top: 20px;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
             word-break: break-all;
+           
             
             h2{
                 margin-left: 3px;

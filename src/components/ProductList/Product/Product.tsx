@@ -60,7 +60,7 @@ const Product = ({ productObj, cartItems, setCartItems, setCartMenuState, setPop
                 </div>
                 <div className="product-detail">
                     <span className="price" > R$ {productObj.price}</span>
-                    <span>{productObj.name}t</span>
+                    <span>{productObj.name}</span>
                     <p>{productObj.description}</p>
 
                     <div className="buttons">
