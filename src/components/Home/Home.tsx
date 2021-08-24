@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Navbar from '../Navbar/Navbar';
 import ProductList from '../ProductList/ProductList';
@@ -31,7 +30,6 @@ const Home = () => {
         setProductItemCount={setProductItemCount}
         productItemCount={productItemCount}
         />
-        <Footer />
       </>
     );
 }

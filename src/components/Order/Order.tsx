@@ -6,16 +6,16 @@ type OrderParams = {
     cartItems: CartProduct[],
 }
 const Order = ({ cartItems }: OrderParams) => {
-    
+
     const [totalState, setTotalSate] = useState<number>(0)
 
     useEffect(() => {
         var total = 0
-        for (let i = 0; i<cartItems.length; i++){
+        for (let i = 0; i < cartItems.length; i++) {
             total += (cartItems[i].quantity * cartItems[i].product.price)
             setTotalSate(total)
         }
-    },[])
+    }, [])
 
     return (typeof cartItems !== 'undefined' && cartItems.length > 0) ? (
         <>
@@ -100,16 +100,21 @@ const Order = ({ cartItems }: OrderParams) => {
                     </form>
                 </div>
 
-                <div className="cart-items-order-container">
-
-
+                <div className="cart-items-order-container active">
                     {
                         cartItems.map(cartItem => (
                             <div className="cart-items-order">
-                                <img src="https://image.flaticon.com/icons/png/512/167/167531.png" alt="" />
-                                <h2>{cartItem.product.name}</h2>
-                                <h4>Qnt: {(cartItem.quantity)}</h4>
-                                <h4>Preço: {(cartItem.product.price * cartItem.quantity)}</h4>
+                                <div className="cart-items-right">
+                                    <img src="https://image.flaticon.com/icons/png/512/167/167531.png" alt="" />
+
+                                </div>
+                                <div className="cart-items-left">
+
+
+                                    <h2>{cartItem.product.name}</h2>
+                                    <h4>Qnt: {(cartItem.quantity)}</h4>
+                                    <h4>Preço: {(cartItem.product.price * cartItem.quantity)}</h4>
+                                </div>
                             </div>
 
                         ))
