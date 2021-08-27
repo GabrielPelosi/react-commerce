@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Redirect } from 'react-router-dom'
 import { CartProduct } from '../../types/CartProduct'
 import './Order.scss'
 

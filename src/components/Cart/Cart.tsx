@@ -1,6 +1,5 @@
 import React from 'react'
 import './Cart.scss'
-import { ProductType } from '../../types/Product'
 import { CartProduct } from '../../types/CartProduct'
 import CartItem from './CartItem/CartItem'
 import { Link } from 'react-router-dom'

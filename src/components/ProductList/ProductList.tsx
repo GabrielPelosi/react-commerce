@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import { CartProduct } from '../../types/CartProduct'
 import Product from './Product/Product'
 import './ProductList.scss'
-import { ProductType } from '../../types/Product'
 import Popup from '../Popup/Popup';
 
 import {products} from '../../data/data'

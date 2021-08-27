@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
 import './Product.scss';
-import { FavoriteBorder, ControlPoint, Remove, RemoveCircleOutline } from '@material-ui/icons';
+import { FavoriteBorder, ControlPoint, RemoveCircleOutline } from '@material-ui/icons';
 import { CartProduct } from './../../../types/CartProduct'
 import { ProductType } from './../../../types/Product'
 
