@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Redirect } from 'react-router-dom'
 import { CartProduct } from '../../types/CartProduct'
 import './Order.scss'
 
@@ -105,7 +106,7 @@ const Order = ({ cartItems }: OrderParams) => {
                         cartItems.map(cartItem => (
                             <div className="cart-items-order">
                                 <div className="cart-items-right">
-                                    <img src="https://image.flaticon.com/icons/png/512/167/167531.png" alt="" />
+                                    <img src={cartItem.product.img} alt="" />
 
                                 </div>
                                 <div className="cart-items-left">

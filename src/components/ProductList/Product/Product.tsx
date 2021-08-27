@@ -56,7 +56,7 @@ const Product = ({ productObj, cartItems, setCartItems, setCartMenuState, setPop
         <>
             <div className="product-card">
                 <div className="product-img">
-
+                    <img src={productObj.img} alt=""/>
                 </div>
                 <div className="product-detail">
                     <span className="price" > R$ {productObj.price}</span>

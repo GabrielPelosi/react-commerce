@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Navbar.scss'
 
 type NavParam = {
@@ -17,9 +18,8 @@ const Navbar = ({cartMenuState, setCartMenuState,productItemCount}: NavParam) =>
                 </div>
                 <div className="nav-items">
                     <ul>
-                        <li>Favorites</li>
-                        <li>Products</li>
-                        <li>Historical</li>
+                        <Link style={{textDecoration: "none", color: "black"}} to="/favoritos"><li>Favoritos</li></Link>
+                        <Link style={{textDecoration: "none", color: "black"}} to="/historico"><li>Historico</li></Link>
                     </ul>
                 </div>
                 <div className="cart-container">

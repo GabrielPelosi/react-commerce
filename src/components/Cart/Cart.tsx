@@ -43,10 +43,8 @@ const Cart = ({ cartMenuState, cartItems, setCartItems, setProductItemCount }: C
                 <div className="added-cart-items-container">
                     {
                         cartItems.map(cartItem => (
-                            <CartItem id={cartItem.product.id}
-                                name={cartItem.product.name}
-                                price={cartItem.product.price}
-                                description={cartItem.product.description}
+                            <CartItem 
+                                product={cartItem.product}
                                 quantity={cartItem.quantity}
                                 cartItems={cartItems} setCartItems={setCartItems} />
                         ))
